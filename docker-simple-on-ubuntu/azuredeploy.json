@@ -10,6 +10,7 @@
     },
     "dnsNameForPublicIP": {
       "type": "string",
+      "defaultValue": "[resourceGroup().name]-vm",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
@@ -62,16 +63,16 @@
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
     "OSDiskName": "osdiskfordockersimple",
-    "nicName": "myVMNicD",
+    "nicName": "VMNicD",
     "extensionName": "DockerExtension",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "diskStorageType": "Standard_LRS",
-    "publicIPAddressName": "myPublicIPD",
+    "publicIPAddressName": "PublicIPD",
     "publicIPAddressType": "Dynamic",
-    "vmName": "MyDockerVM",
-    "virtualNetworkName": "MyVNETD",
+    "vmName": "DockerVM",
+    "virtualNetworkName": "VNETD",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
