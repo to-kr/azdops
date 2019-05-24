@@ -22,16 +22,19 @@
         "description": "VM size for the Docker host."
       }
     },
-    "ubuntuOSVersion": {
+    "centOSVersion": {
       "type": "string",
-      "defaultValue": "14.04.4-LTS",
+      "defaultValue": "7.6",
       "metadata": {
-        "description": "The Ubuntu version for deploying the Docker containers. This will pick a fully patched image of this given Ubuntu version. Allowed values: 14.04.4-LTS, 15.10, 16.04.0-LTS"
+        "description": "The CentOS version for deploying the Docker containers."
       },
       "allowedValues": [
-        "14.04.4-LTS",
-        "15.10",
-        "16.04.0-LTS"
+        "7.6",
+        "7.5",
+        "7.4",
+        "7.3",
+        "7.2",
+        "7.1"
       ]
     },
     "location": {
@@ -61,7 +64,7 @@
   },
   "variables": {
     "imagePublisher": "Canonical",
-    "imageOffer": "UbuntuServer",
+    "imageOffer": "CentOS",
     "OSDiskName": "osdiskfordockersimple",
     "nicName": "VMNicD",
     "extensionName": "DockerExtension",
@@ -168,7 +171,7 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[parameters('ubuntuOSVersion')]",
+            "sku": "[parameters('centOSVersion')]",
             "version": "latest"
           },
           "osDisk": {
