@@ -63,7 +63,7 @@
     }
   },
   "variables": {
-    "imagePublisher": "Canonical",
+    "imagePublisher": "OpenLogic",
     "imageOffer": "CentOS",
     "OSDiskName": "osdiskfordockersimple",
     "nicName": "VMNicD",
